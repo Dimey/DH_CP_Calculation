@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360B74B820C1E04700ED8161 /* LatexConstructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B74B720C1E04700ED8161 /* LatexConstructs.swift */; };
+		360B74B820C1E04700ED8161 /* DHLatexConstructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B74B720C1E04700ED8161 /* DHLatexConstructs.swift */; };
+		368D012720D47997008B9048 /* DHConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D012620D47997008B9048 /* DHConsolePrinter.swift */; };
+		368D012920D494D5008B9048 /* DHLatexTablePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D012820D494D5008B9048 /* DHLatexTablePrinter.swift */; };
 		36C3EE9E20180040005C0AC9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3EE9D20180040005C0AC9 /* main.swift */; };
-		36C3EEA520180091005C0AC9 /* CPCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3EEA420180091005C0AC9 /* CPCalculator.swift */; };
+		36C3EEA520180091005C0AC9 /* DHCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3EEA420180091005C0AC9 /* DHCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +27,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		360B74B720C1E04700ED8161 /* LatexConstructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatexConstructs.swift; sourceTree = "<group>"; };
+		360B74B720C1E04700ED8161 /* DHLatexConstructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHLatexConstructs.swift; sourceTree = "<group>"; };
+		368D012620D47997008B9048 /* DHConsolePrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHConsolePrinter.swift; sourceTree = "<group>"; };
+		368D012820D494D5008B9048 /* DHLatexTablePrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHLatexTablePrinter.swift; sourceTree = "<group>"; };
+		368D012A20D497A1008B9048 /* pokemon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
 		36C3EE9A20180040005C0AC9 /* DH_CP_Calculation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DH_CP_Calculation; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C3EE9D20180040005C0AC9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		36C3EEA420180091005C0AC9 /* CPCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCalculator.swift; sourceTree = "<group>"; };
+		36C3EEA420180091005C0AC9 /* DHCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				36C3EE9D20180040005C0AC9 /* main.swift */,
-				36C3EEA420180091005C0AC9 /* CPCalculator.swift */,
-				360B74B720C1E04700ED8161 /* LatexConstructs.swift */,
+				368D012620D47997008B9048 /* DHConsolePrinter.swift */,
+				368D012820D494D5008B9048 /* DHLatexTablePrinter.swift */,
+				360B74B720C1E04700ED8161 /* DHLatexConstructs.swift */,
+				36C3EEA420180091005C0AC9 /* DHCalculator.swift */,
+				368D012A20D497A1008B9048 /* pokemon.json */,
 			);
 			path = DH_CP_Calculation;
 			sourceTree = "<group>";
@@ -126,9 +134,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				360B74B820C1E04700ED8161 /* LatexConstructs.swift in Sources */,
+				368D012720D47997008B9048 /* DHConsolePrinter.swift in Sources */,
+				360B74B820C1E04700ED8161 /* DHLatexConstructs.swift in Sources */,
 				36C3EE9E20180040005C0AC9 /* main.swift in Sources */,
-				36C3EEA520180091005C0AC9 /* CPCalculator.swift in Sources */,
+				368D012920D494D5008B9048 /* DHLatexTablePrinter.swift in Sources */,
+				36C3EEA520180091005C0AC9 /* DHCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

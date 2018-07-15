@@ -10,7 +10,9 @@ import Foundation
 
 // JUST CALCULATION AND PRINTING
 // 1. Create a CPCalculator-Object
-let calculator = CPCalculator()
+let latexPrinter = DHLatexTablePrinter()
+let consolePrinter = DHConsolePrinter()
+let calculator = DHCalculator()
 
 // 2. Use the non-latex function, insert your pokemon and its level
 // calculator.printCPRangeOf("Charmander", atLvl: 20)
@@ -44,4 +46,6 @@ let trans5 = HSBColorTransition(color1: (32/360,27/100,100/100), color2: (31/360
 //                                    atLvl: 20)
 //calculator.createLatexSingleCPTableFor("Aerodactyl", atLvl: 38, withValueCount: 30, withColorTransition: trans4)
 //calculator.createLatexDoubleCPTableFor(pokemon1: "Latias", withTransition1: trans1, pokemon2: "Latios", withTransition2: trans2, atLvl: 20, withValueCount: 30)
-calculator.calculateCPForCDFor("Alolan Exeggutor")
+//latexPrinter.printCPTableFor(["Articuno", "Lugia", "Regice"], atLvl: [15,20], withValueCount: 35, withColorTransition: [trans1, trans2, trans3])
+consolePrinter.printCPDataForCommunityDay("Eevee")
+//calculator.createLatexSingleCPTableFor("Snorlax", atLvl: 15, withValueCount: 40, withColorTransition: trans4)
