@@ -80,7 +80,7 @@ public class DHCalculator {
     }
     
     // single value calculation for certain level and ivs
-    func calculateCPOf(_ pokemon: String, atLvl level: Int, withIVs IVs: (ivA: Double, ivD: Double, ivS: Double)) -> Int? {
+    func calculateCPOf(_ pokemon: String, atLvl level: Int, withIVs IVs: (ivA: Double, ivD: Double, ivS: Double)) -> Double? {
         guard let baseValues = fetchBaseValuesOf(pokemon) else {
             return nil
         }
@@ -91,14 +91,14 @@ public class DHCalculator {
         let defense = (baseValues.baseDef+IVs.ivD)*totalCPMultplier
         let stamina = (baseValues.baseSta+IVs.ivS)*totalCPMultplier
         
-        let cp = max(10, floor(sqrt(stamina)*attack*sqrt(defense)/10))
+        let cp = max(10, sqrt(stamina)*attack*sqrt(defense)/10)
         
-        return Int(cp)
+        return cp
     }
     
     // calculate cps at lvl x in range 10/10/10 to 15/15/15, check possible returns (by cp, by perfection)
     func calculateCPRangeOf(_ pokemon: String, atLvl level: Int) -> [(key: String, value: Int)]? {
-        var cpRange: [String : Int] = [:]
+        var cpRange: [String : Double] = [:]
         
         for ivA in 10...15 {
             for ivD in 10...15 {
@@ -110,14 +110,15 @@ public class DHCalculator {
                 }
             }
         }
-        return cpRange.sorted(by: { $0.1 == $1.1 ? digitSum(Int($0.0)!) > digitSum(Int($1.0)!) : $0.1 > $1.1 }) // sorted by CP
+        // zuerst die ungerundeten CP sortieren und anschließend mit floor abrunden
+        return cpRange.sorted(by: { $0.1 > $1.1 }).map { ($0.key,Int(floor($0.value))) }
         //return cpRange.sorted(by: { digitSum(Int($0.0)!) == digitSum(Int($1.0)!) ? $0.1 > $1.1 : digitSum(Int($0.0)!) > digitSum(Int($1.0)!) }) //sorted by IV%
     }
     
     // calculate cps at lvl x and lvl x+5 in range 10/10/10 to 15/15/15, check possible returns (by cp, by perfection)
     func calculateCPRangeOfRaid(_ pokemon: String, atLvl level: Int) -> [(key: String, value: (Int,Int))]? {
         //Format is [<IV-String>:(Lv20CP,Lv25CP)]
-        var cpRange: [String : (Int,Int)] = [:]
+        var cpRange: [String : (Double,Double)] = [:]
         
         for ivA in 10...15 {
             for ivD in 10...15 {
@@ -130,7 +131,8 @@ public class DHCalculator {
                 }
             }
         }
-        return cpRange.sorted(by: { $0.1.0 == $1.1.0 ? $0.1.1 > $1.1.1 : $0.1.0 > $1.1.0 }) // sorted by CP
+        // zuerst die ungerundeten CP sortieren und anschließend mit floor abrunden
+        return cpRange.sorted(by: { $0.1.0 > $1.1.0 }).map { ($0.key,(Int(floor($0.value.0)),Int(floor($0.value.1)))) } // sorted by CP
         //return cpRange.sorted(by: { digitSum(Int($0.0)!) == digitSum(Int($1.0)!) ? $0.1 > $1.1 : digitSum(Int($0.0)!) > digitSum(Int($1.0)!) }) //sorted by IV%
     }
     

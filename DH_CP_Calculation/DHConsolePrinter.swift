@@ -80,7 +80,7 @@ class DHConsolePrinter {
             for ivA in 0...15 {
                 for ivD in 0...15 {
                     for ivS in 0...15 where ivA != 15 || ivD != 15 || ivS != 15 {
-                        allIVs.append(calculator.calculateCPOf(pokemon, atLvl: level, withIVs: (Double(ivA), Double(ivD), Double(ivS))) ?? 0)
+                        allIVs.append(Int(calculator.calculateCPOf(pokemon, atLvl: level, withIVs: (Double(ivA), Double(ivD), Double(ivS))) ?? 0))
                     }
                 }
             }
@@ -88,7 +88,7 @@ class DHConsolePrinter {
         
         // Berechne alle 100IV-Konfigurationen
         for i in 1...35 {
-            only100.append(calculator.calculateCPOf(pokemon, atLvl: i, withIVs: (15,15,15)) ?? 0)
+            only100.append(Int(calculator.calculateCPOf(pokemon, atLvl: i, withIVs: (15,15,15)) ?? 0))
         }
         
         print(pokemon.uppercased())
